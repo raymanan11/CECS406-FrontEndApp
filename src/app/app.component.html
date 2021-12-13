@@ -1,0 +1,26 @@
+<div class="container">
+    <label for="airlineParts">Airline Parts</label>
+    <app-airline-part
+    *ngFor="let part of airlineParts"
+      [part]="part">
+    </app-airline-part>
+    <button (click)="getAllAirlineParts()">Get All Airline Parts</button>
+    <label for="airlinePart">Create Airline Part</label>
+    <input type="text" [(ngModel)]="newPartName" placeholder="Part Number">
+    <input type="text" [(ngModel)]="productID" placeholder="Product Id">
+    <input type="text" [(ngModel)]="quantity" placeholder="Quantity">
+    <input type="text" [(ngModel)]="newPartOwner" placeholder="Owner">
+    <button (click)="createAirlinePart()">Create Product</button>
+    <label for="airlinePart">Query Airline Part</label>
+    <div class="partInfo" *ngIf="part.productID != 0">
+      <p>Product Id: {{part.productID}}</p>
+      <p>Quantity: {{part.quantity}}</p>
+      <p>Part Owner: {{part.owner}}</p>
+  </div>
+    <input type="text" [(ngModel)]="partName" placeholder="Part Number">
+    <button (click)="getAirlinePart()">Get an Airline Part</button>
+    <label for="airlinePart">Change Airline Part Owner</label>
+    <input type="text" [(ngModel)]="selectedPart" placeholder="Part Number">
+    <input type="text" [(ngModel)]="newOwner" placeholder="New Part Owner">
+    <button (click)="changePartOwner()">Change Part Owner</button> 
+</div>
